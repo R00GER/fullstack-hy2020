@@ -43,23 +43,38 @@ const Statistics = (props) => {
   } else {
     return (
       <div>
-        <StatisticLine text="good" value={props.good} />
-        <StatisticLine text="neutral" value={props.neutral} />
-        <StatisticLine text="bad" value={props.bad} />
-        <StatisticLine text="all" value={props.allFeedbacks.length} />
-        <StatisticLine text="average" value={average} />
-        <StatisticLine text="positive" value={positiveRate + " %"} />
+        <h1>statistics</h1>
+        <table>
+          <tbody>
+            <tr>
+              <td>good</td>
+              <td>{props.good}</td>
+            </tr>
+            <tr>
+              <td>neutral</td>
+              <td>{props.neutral}</td>
+            </tr>
+            <tr>
+              <td>bad</td>
+              <td>{props.bad}</td>
+            </tr>
+            <tr>
+              <td>all</td>
+              <td>{props.allFeedbacks.length}</td>
+            </tr>
+            <tr>
+              <td>average</td>
+              <td>{average}</td>
+            </tr>
+            <tr>
+              <td>positive</td>
+              <td>{positiveRate + " %"}</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     );
   }
-};
-
-const StatisticLine = (props) => {
-  return (
-    <p>
-      {props.text} {props.value}
-    </p>
-  );
 };
 
 const App = () => {

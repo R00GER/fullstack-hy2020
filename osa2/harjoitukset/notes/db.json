@@ -1,0 +1,88 @@
+{
+  "notes": [
+    {
+      "id": 1,
+      "content": "HTML is easy",
+      "date": "2020-01-10T17:30:31.098Z",
+      "important": false
+    },
+    {
+      "id": 2,
+      "content": "Browser can execute only Javascript",
+      "date": "2020-01-10T18:39:34.091Z",
+      "important": false
+    },
+    {
+      "id": 3,
+      "content": "GET and POST are the most important methods of HTTP protocol",
+      "date": "2020-01-10T19:20:14.298Z",
+      "important": false
+    },
+    {
+      "content": "a new note...",
+      "date": "2020-05-15T18:59:09.752Z",
+      "important": false,
+      "id": 4
+    },
+    {
+      "content": "Pylly",
+      "date": "2020-05-15T18:59:39.641Z",
+      "important": false,
+      "id": 5
+    },
+    {
+      "content": "Kakuli",
+      "date": "2020-05-15T19:00:01.197Z",
+      "important": false,
+      "id": 6
+    },
+    {
+      "content": "perse",
+      "date": "2020-05-15T19:01:31.595Z",
+      "important": false,
+      "id": 7
+    },
+    {
+      "content": "a new note...",
+      "date": "2020-05-15T19:01:57.961Z",
+      "important": false,
+      "id": 8
+    },
+    {
+      "content": "a new note...",
+      "date": "2020-05-15T19:04:10.387Z",
+      "important": false,
+      "id": 9
+    },
+    {
+      "content": "Pesrs",
+      "date": "2020-05-15T19:04:17.144Z",
+      "important": false,
+      "id": 10
+    },
+    {
+      "content": "a new note...",
+      "date": "2020-05-20T06:03:12.795Z",
+      "important": false,
+      "id": 11
+    },
+    {
+      "content": "a new note...",
+      "date": "2020-05-20T06:04:05.218Z",
+      "important": true,
+      "id": 12
+    },
+    {
+      "content": "Peludf",
+      "date": "2020-05-20T06:04:12.824Z",
+      "important": true,
+      "id": 13
+    },
+    {
+      "content": "",
+      "date": "2020-05-20T06:04:16.660Z",
+      "important": false,
+      "id": 14
+    }
+  ]
+}

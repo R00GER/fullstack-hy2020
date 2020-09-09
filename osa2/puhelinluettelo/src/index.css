@@ -17,6 +17,7 @@ body {
   align-self: center;
   margin-left: 5px;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .notification {

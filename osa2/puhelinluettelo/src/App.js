@@ -31,7 +31,7 @@ const App = () => {
   };
 
   const handleNumberChange = (event) => {
-    setNewNumber(event.target.value);
+    setNewNumber(+event.target.value);
   };
 
   const addName = (event) => {
@@ -93,7 +93,7 @@ const App = () => {
           resetInputs();
         })
         .catch((error) => {
-          setNotification("Something went wrong");
+          setNotification(`Error: ${error.response.data.error}`);
           setSuccess(false);
           setTimeout(() => {
             setNotification(null);
@@ -106,13 +106,10 @@ const App = () => {
   const removePerson = (id) => {
     personsService
       .deletePerson(id)
-      .then((response) => {
+      .then(() => {
+        const removedPerson = persons.find((person) => person.id === id);
         setPersons(persons.filter((person) => person.id !== id));
-        setNotification(
-          `Removed ${persons.map((person) => 
-            person.id === id ? person.name : null
-          )}`
-        );
+        setNotification(`Removed ${removedPerson.name}`);
         setSuccess(true);
         setTimeout(() => {
           setNotification(null);
@@ -120,7 +117,7 @@ const App = () => {
         }, 3000);
       })
       .catch((error) => {
-        setNotification("Something went wrong");
+        setNotification(error.response.data.error, "Something went wrong");
         setSuccess(false);
         setTimeout(() => {
           setNotification(null);

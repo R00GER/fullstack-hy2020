@@ -2,7 +2,7 @@ import React from "react";
 
 const Notification = ({ notification, success }) => {
 
-  if (notification === null) {
+  if (!notification) {
     return null;
   }
 

@@ -1,10 +1,12 @@
 const mongoose = require('mongoose');
 
+mongoose.Schema.Types.Number.set('default', 0);
+
 const blogSchema = mongoose.Schema({
   title: { type: String, required: true },
-  author: { type: String, required: false },
+  author: { type: String },
   url: { type: String, required: true },
-  likes: { type: Number, required: false },
+  likes: { type: Number },
 });
 
 blogSchema.set('toJSON', {

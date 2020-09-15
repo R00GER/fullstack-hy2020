@@ -1,0 +1,32 @@
+GET http://localhost:8001/api/users
+
+http://localhost:8001/api/users
+
+{
+"username": "R00GER",
+"name": "Ronny",
+"passwordHash": "salasana"
+}
+
+http://localhost:8001/api/login
+
+{
+"username": "R00GER",
+"password": "salasana"
+}
+
+http://localhost:8001/api/blogs
+
+ {
+   "title": "Personal blog of Dan Abramov",
+    "author": "Dan Abramov",
+    "url": "https://overreacted.io/",
+    "likes": 0,
+ }
+
+{
+ "title": "David Walsh Blog",
+"author": "David Walsh",
+"url": "https://davidwalsh.name/",
+"likes": 0,
+}

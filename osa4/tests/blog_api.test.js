@@ -6,6 +6,8 @@ const app = require('../app');
 const api = supertest(app);
 const Blog = require('../models/blog');
 
+let token;
+
 describe('when there is ininitally some blogs saved', () => {
   beforeEach(async () => {
     await Blog.deleteMany({});
@@ -32,10 +34,19 @@ describe('when there is ininitally some blogs saved', () => {
   });
 });
 
-describe('when adding new blogs', () => {
+describe('when there is valid login, token creted, and adding new blogs', () => {
+  beforeEach(async () => {
+    const user = {
+      username: 'root',
+      password: 'salasana',
+    };
+
+    const response = await api.post('/api/login').send(user).expect(200);
+    token = response.body.token;
+  });
+
   test("blogs id's are defined", async () => {
     const response = await api.get('/api/blogs/');
-
     expect(response.body[0].id).toBeDefined();
     expect(response.body[1].id).toBeDefined();
   });
@@ -46,7 +57,30 @@ describe('when adding new blogs', () => {
       likes: 0,
     };
 
-    await api.post('/api/blogs').send(newBlog).expect(400);
+    await api
+      .post('/api/blogs')
+      .set('Authorization', `bearer ${token}`)
+      .send(newBlog)
+      .expect(400)
+      .expect('Content-Type', /application\/json/);
+
+    const blogsAtEnd = await blogsInDb();
+    expect(blogsAtEnd).toHaveLength(initialBlogs.length);
+  });
+
+  test('blog without valid token is not added', async () => {
+    const newBlog = {
+      title: 'Personal blog of Dan Abramov',
+      author: 'Dan Abramov',
+      url: 'https://overreacted.io/',
+      likes: 0,
+    };
+
+    await api
+      .post('/api/blogs')
+      .send(newBlog)
+      .expect(401)
+      .expect('Content-Type', /application\/json/);
 
     const blogsAtEnd = await blogsInDb();
     expect(blogsAtEnd).toHaveLength(initialBlogs.length);
@@ -65,6 +99,7 @@ describe('when adding new blogs', () => {
     await api
       .post('/api/blogs')
       .send(newBlog)
+      .set('Authorization', `bearer ${token}`)
       .expect(200)
       .expect('Content-Type', /application\/json/);
 
@@ -86,6 +121,7 @@ describe('when adding new blogs', () => {
     await api
       .post('/api/blogs')
       .send(newBlog)
+      .set('Authorization', `bearer ${token}`)
       .expect(200)
       .expect('Content-Type', /application\/json/);
 
@@ -106,7 +142,7 @@ describe('viewing a specific blog', () => {
 
   test('success with valid id', async () => {
     const blogs = await blogsInDb();
-    const blogToView = blogs[1];
+    const blogToView = blogs[0];
 
     const resultBlog = await api
       .get(`/api/blogs/${blogToView.id}`)
@@ -120,13 +156,28 @@ describe('viewing a specific blog', () => {
 
 describe('deletion of a blog', () => {
   test('succeeds with status code 204 if id is valid', async () => {
-    const blogs = await blogsInDb();
-    const blogToDelete = blogs[0];
+    const newBlog = {
+      title: 'Personal blog of Dan Abramov',
+      author: 'Dan Abramov',
+      url: 'https://overreacted.io/',
+      likes: '',
+    };
 
-    await api.delete(`/api/blogs/${blogToDelete.id}`).expect(204);
+    const post = await api
+      .post('/api/blogs')
+      .send(newBlog)
+      .set('Authorization', `bearer ${token}`)
+      .expect(200);
 
-    const blogsAfterDelete = await blogsInDb();
-    expect(blogsAfterDelete).toHaveLength(blogs.length - 1);
+    const blogsAtStart = await blogsInDb();
+
+    await api
+      .delete(`/api/blogs/${post.body.id}`)
+      .set('Authorization', `bearer ${token}`)
+      .expect(204);
+
+    const blogsAtEnd = await blogsInDb();
+    expect(blogsAtEnd).toHaveLength(blogsAtStart.length - 1);
   });
 });
 

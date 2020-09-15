@@ -8,26 +8,41 @@ const requestLogger = (req, res, next) => {
   next();
 };
 
-const unknownEndpoint = (req, res) => {
-  res.status(404).send({ error: 'unknown endpoint' });
+const unknownEndpoint = (request, response) => {
+  response.status(404).json({ error: 'unknown endpoint' });
 };
 
-const errorHandler = (err, req, res, next) => {
-  logger.error(err.message);
-
-  // if (err.name === 'CastError') {
-  //   return res.status(400).send({ error: 'malformatted id' });
-  // }
-
-  if (err.name === 'ValidationError') {
-    return res.status(400).json({ error: err.message });
+const errorHandler = (error, request, response, next) => {
+  if (error.name === 'CastError') {
+    return response.status(400).json({ error: 'malformatted id' });
   }
 
-  return next(err);
+  if (error.name === 'ValidationError') {
+    return response.status(400).json({
+      validationError: 'Required: title, url, username, password. Username: must be unique, minlength is 3',
+    });
+  }
+
+  if (error.name === 'JsonWebTokenError') {
+    return response.status(401).json({
+      error: 'invalid token',
+    });
+  }
+
+  return next(error);
+};
+
+const getTokenFrom = (req, res, next) => {
+  const authorization = req.get('authorization');
+  if (authorization && authorization.toLowerCase().startsWith('bearer ')) {
+    req.token = authorization.substring(7);
+  }
+  return next();
 };
 
 module.exports = {
   requestLogger,
   unknownEndpoint,
   errorHandler,
+  getTokenFrom,
 };

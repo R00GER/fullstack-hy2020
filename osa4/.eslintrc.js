@@ -20,6 +20,7 @@ module.exports = {
     'no-underscore-dangle': 0,
     'no-unused-vars': [2, { args: 'none' }],
     'no-plusplus': 0,
+    'no-else-return': 0,
   },
   plugins: ['jest'],
 };

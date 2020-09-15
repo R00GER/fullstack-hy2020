@@ -1,4 +1,6 @@
+// const jwt = require('jsonwebtoken');
 const Blog = require('../models/blog');
+const User = require('../models/user');
 
 const initialBlogs = [
   {
@@ -20,7 +22,14 @@ const blogsInDb = async () => {
   return blogs;
 };
 
+const usersInDb = async () => User.find({});
+
+// const getLoggedUser = () => {
+
+// }
+
 module.exports = {
   initialBlogs,
   blogsInDb,
+  usersInDb,
 };

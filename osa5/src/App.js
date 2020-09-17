@@ -61,8 +61,6 @@ const App = () => {
     });
   };
 
-  console.log(newBlog);
-
   const createNewBlog = async (event) => {
     event.preventDefault();
 
@@ -74,14 +72,11 @@ const App = () => {
     }
   };
 
-  console.log(userCredentials, user);
-
   return !user ? (
     <Login
       handleUser={handleUser}
       handleLogin={handleLogin}
-      username={userCredentials.username}
-      password={userCredentials.password}
+      userCredentials={userCredentials}
       user={user}
     />
   ) : (
@@ -90,9 +85,7 @@ const App = () => {
       <BlogForm
         handleBlog={handleBlog}
         createNewBlog={createNewBlog}
-        title={newBlog.title}
-        author={newBlog.author}
-        url={newBlog.url}
+        newBlog={newBlog}
       />
       <Blogs blogs={blogs} />
     </>

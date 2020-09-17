@@ -20,7 +20,7 @@ const login = (props) => {
           <label htmlFor="username">Username:</label>
           <input
             onChange={(event) => props.handleUser(event)}
-            value={props.username}
+            value={props.userCredentials.username}
             type="text"
             name="username"
           />
@@ -29,7 +29,7 @@ const login = (props) => {
           <label htmlFor="password">Password:</label>
           <input
             onChange={(event) => props.handleUser(event)}
-            value={props.password}
+            value={props.userCredentials.password}
             type="password"
             name="password"
             autoComplete="on"

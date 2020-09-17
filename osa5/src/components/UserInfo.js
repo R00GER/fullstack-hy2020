@@ -1,9 +1,6 @@
 import React from 'react';
 
 const UserInfo = (props) => {
-  // console.log('NAME', props.user.name);
-  // console.log('PROPS', props.name);
-
   const containerStyles = {
     display: 'flex',
     flexDirection: 'row',

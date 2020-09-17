@@ -11,8 +11,8 @@ const App = () => {
   const [newBlog, setNewBlog] = useState({ title: '', author: '', url: '' });
   const [userCredentials, setUserCredentials] = useState({ username: '', password: '' });
   const [user, setUser] = useState(null);
-  // katso edellisten tehtävien malliratkaisuista, miten erotetaan 
-  // error ja onnistuneen toiminteen notifikaatio
+  // katso edellisten tehtävien malliratkaisuista, miten erotetaan
+  // error ja onnistuneen toiminteen notifikaatio - PUHELINLUETTELO
   const [notification, setNotification] = useState('');
 
   useEffect(() => {
@@ -74,19 +74,13 @@ const App = () => {
 
   return !user ? (
     <Login
-      handleUser={handleUser}
-      handleLogin={handleLogin}
-      userCredentials={userCredentials}
-      user={user}
-    />
+     handleUser={handleUser}
+     handleLogin={handleLogin}
+     userCredentials={userCredentials} />
   ) : (
     <>
       <UserInfo handleLogout={handleLogout} user={user} />
-      <BlogForm
-        handleBlog={handleBlog}
-        createNewBlog={createNewBlog}
-        newBlog={newBlog}
-      />
+      <BlogForm handleBlog={handleBlog} createNewBlog={createNewBlog} newBlog={newBlog} />
       <Blogs blogs={blogs} />
     </>
   );

@@ -1,17 +1,17 @@
 import React from 'react';
 
-const formStyles = {
-  width: '270px',
-  marginBottom: '1em',
-};
-
-const inputStyles = {
-  marginBottom: '.2em',
-  display: 'flex',
-  justifyContent: 'space-between',
-};
-
 const login = (props) => {
+  const formStyles = {
+    width: '270px',
+    marginBottom: '1em',
+  };
+  
+  const inputStyles = {
+    marginBottom: '.2em',
+    display: 'flex',
+    justifyContent: 'space-between',
+  };
+  
   return (
     <>
       <h2>log in to application</h2>

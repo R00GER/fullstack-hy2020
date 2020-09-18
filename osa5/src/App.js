@@ -11,9 +11,8 @@ const App = () => {
   const [newBlog, setNewBlog] = useState({ title: '', author: '', url: '' });
   const [userCredentials, setUserCredentials] = useState({ username: '', password: '' });
   const [user, setUser] = useState(null);
-  // katso edellisten tehtävien malliratkaisuista, miten erotetaan
-  // error ja onnistuneen toiminteen notifikaatio - PUHELINLUETTELO
-  const [notification, setNotification] = useState('');
+  // error/notification
+  // const [notification, setNotification] = useState('');
 
   useEffect(() => {
     blogService.getAll().then((blogs) => setBlogs(blogs));

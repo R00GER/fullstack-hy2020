@@ -5,6 +5,7 @@ const UserInfo = (props) => {
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
+    marginTop: ".5em",
   };
 
   return (

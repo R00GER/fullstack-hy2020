@@ -1,6 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const BlogForm = (props) => {
+const BlogForm = ({ createNewBlog }) => {
+  const [newBlog, setNewBlog] = useState({ title: '', author: '', url: '' });
+
+  const handleBlog = (event) => {
+    setNewBlog({
+      ...newBlog,
+      [event.target.name]: event.target.value,
+    });
+  };
+
+  const addBlog = (event) => {
+    event.preventDefault();
+    createNewBlog(newBlog);
+
+    setNewBlog({title: '', author: '', url: ''});
+  }
+
   const formStyles = {
     width: '270px',
     marginBottom: '1em',
@@ -15,21 +31,21 @@ const BlogForm = (props) => {
   return (
     <>
       <h2>create new blog</h2>
-      <form style={formStyles} onSubmit={(event) => props.createNewBlog(event)}>
+      <form style={formStyles} onSubmit={addBlog}>
         <div style={inputStyles}>
           <label htmlFor="title">title:</label>
-          <input type="text" name="title" value={props.newBlog.title} onChange={(event) => props.handleBlog(event)} />
+          <input type="text" name="title" value={newBlog.title} onChange={handleBlog} />
         </div>
         <div style={inputStyles}>
           <label htmlFor="author">author:</label>
-          <input type="text" name="author" value={props.newBlog.author} onChange={(event) => props.handleBlog(event)} />
+          <input type="text" name="author" value={newBlog.author} onChange={handleBlog} />
         </div>
         <div style={inputStyles}>
           <label htmlFor="url">url:</label>
-          <input type="text" name="url" value={props.newBlog.url} onChange={(event) => props.handleBlog(event)} />
+          <input type="text" name="url" value={newBlog.url} onChange={handleBlog} />
         </div>
         <div>
-          <button type="submit">create</button>
+          <button className="blog-btn" type="submit">create</button>
         </div>
       </form>
     </>

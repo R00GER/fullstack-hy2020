@@ -2,20 +2,24 @@ import React, { useState, useEffect } from 'react';
 import Blogs from './components/Blogs';
 import blogService from './services/blogs';
 import loginService from './services/login';
+import Notifications from './components/Notifications';
+import Toggable from './components/Toggable';
 import Login from './components/Login';
 import UserInfo from './components/UserInfo';
 import BlogForm from './components/BlogForm';
+import './App.css';
 
 const App = () => {
   const [blogs, setBlogs] = useState([]);
-  const [newBlog, setNewBlog] = useState({ title: '', author: '', url: '' });
-  const [userCredentials, setUserCredentials] = useState({ username: '', password: '' });
   const [user, setUser] = useState(null);
-  // error/notification
-  // const [notification, setNotification] = useState('');
+  const [notification, setNotification] = useState(null);
 
   useEffect(() => {
-    blogService.getAll().then((blogs) => setBlogs(blogs));
+    const getAllBlogs = async () => {
+      const initialBlogs = await blogService.getAll();
+      setBlogs(initialBlogs.sort((a, b) => b.likes - a.likes));
+    };
+    getAllBlogs();
   }, []);
 
   useEffect(() => {
@@ -23,28 +27,27 @@ const App = () => {
 
     if (loggedBlogAppUser) {
       const user = JSON.parse(loggedBlogAppUser);
+
       setUser(user);
       blogService.setToken(user.token);
     }
   }, []);
 
-  const handleUser = (event) => {
-    setUserCredentials({
-      ...userCredentials,
-      [event.target.name]: event.target.value,
-    });
+  const handleNotifications = (message, type) => {
+    setNotification({ message, type });
+    setTimeout(() => {
+      setNotification(null);
+    }, 5000);
   };
 
-  const handleLogin = async (event) => {
-    event.preventDefault();
+  const handleLogin = async (userCredentials) => {
     try {
       const user = await loginService.login(userCredentials);
       window.localStorage.setItem('loggedBlogAppUser', JSON.stringify(user));
       blogService.setToken(user.token);
       setUser(user);
-      setUserCredentials({});
     } catch (error) {
-      console.log(error);
+      handleNotifications(error.response.data.error, 'error');
     }
   };
 
@@ -53,35 +56,51 @@ const App = () => {
     setUser(null);
   };
 
-  const handleBlog = (event) => {
-    setNewBlog({
-      ...newBlog,
-      [event.target.name]: event.target.value,
-    });
-  };
-
-  const createNewBlog = async (event) => {
-    event.preventDefault();
-
+  const addBlog = async (newBlog) => {
     try {
       const blog = await blogService.create(newBlog);
       setBlogs(blogs.concat(blog));
+      handleNotifications(`blog "${newBlog.title}" by ${newBlog.author} added`, 'success');
     } catch (error) {
-      console.log(error);
+      handleNotifications(`${error.response.data.error}, blog not added`, 'error');
     }
   };
 
-  return !user ? (
-    <Login
-     handleUser={handleUser}
-     handleLogin={handleLogin}
-     userCredentials={userCredentials} />
-  ) : (
-    <>
-      <UserInfo handleLogout={handleLogout} user={user} />
-      <BlogForm handleBlog={handleBlog} createNewBlog={createNewBlog} newBlog={newBlog} />
-      <Blogs blogs={blogs} />
-    </>
+  const handleLikes = async (blogObject) => {
+    const likedBlog = await blogService.update(blogObject);
+    setBlogs(
+      blogs
+        .map((blog) => (blog.id === likedBlog.id ? likedBlog : blog))
+        .sort((a, b) => b.likes - a.likes)
+    );
+  };
+
+  const handleDeletes = async (blogObject) => {
+    try {
+      await blogService.deleteBlog(blogObject);
+      setBlogs(blogs.filter((blog) => blog.id !== blogObject.id));
+      setNotification({ message: `blog ${blogObject.title} deleted succesfully`, type: 'success' });
+    } catch (error) {
+      setNotification({ message: error.response.data.error, type: 'error' });
+    }
+  };
+
+  return (
+    <div className="app">
+      <h1>blogs</h1>
+      <Notifications notification={notification} />
+      {!user ? (
+        <Login login={handleLogin} />
+      ) : (
+        <>
+          <UserInfo handleLogout={handleLogout} user={user} />
+          <Toggable>
+            <BlogForm createNewBlog={addBlog} />
+          </Toggable>
+          <Blogs likes={handleLikes} deleteBlog={handleDeletes} blogs={blogs} user={user} />
+        </>
+      )}
+    </div>
   );
 };
 

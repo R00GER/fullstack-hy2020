@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const login = (props) => {
+const Login = ({ login }) => {
+  const [userCredentials, setUserCredentials] = useState({ username: '', password: '' });
+
   const formStyles = {
-    width: '270px',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    width: '290px',
     marginBottom: '1em',
   };
   
@@ -11,16 +16,30 @@ const login = (props) => {
     display: 'flex',
     justifyContent: 'space-between',
   };
-  
+
+  const handleUser = (event) => {
+    setUserCredentials({
+      ...userCredentials,
+      [event.target.name]: event.target.value,
+    });
+  };
+
+  const handleLogin = (event) => {
+    event.preventDefault();
+    login(userCredentials);
+
+    setUserCredentials({username: '', password: ''})
+  }
+
   return (
     <>
       <h2>log in to application</h2>
-      <form style={formStyles} onSubmit={(event) => props.handleLogin(event)}>
+      <form style={formStyles} onSubmit={handleLogin}>
         <div style={inputStyles}>
           <label htmlFor="username">Username:</label>
           <input
-            onChange={(event) => props.handleUser(event)}
-            value={props.userCredentials.username}
+            onChange={handleUser}
+            value={userCredentials.username}
             type="text"
             name="username"
           />
@@ -28,8 +47,8 @@ const login = (props) => {
         <div style={inputStyles}>
           <label htmlFor="password">Password:</label>
           <input
-            onChange={(event) => props.handleUser(event)}
-            value={props.userCredentials.password}
+            onChange={handleUser}
+            value={userCredentials.password}
             type="password"
             name="password"
             autoComplete="on"
@@ -43,4 +62,4 @@ const login = (props) => {
   );
 };
 
-export default login;
+export default Login;

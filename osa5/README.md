@@ -3,9 +3,9 @@
 ### TODO
 
 * refs
-  * [ ] ref to new blog form
+  * [x] ref to new blog form
   * [ ] ref to new blog form cancel button (flex?)
   * [ ] click event outside of component (minify blog when clicking outside)
   
 * confirm
-  * [ ] window.confirm when removing blogs
+  * [x] window.confirm when removing blogs

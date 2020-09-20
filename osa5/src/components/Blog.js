@@ -11,7 +11,11 @@ const Blog = ({ blog, likes, deleteBlog, user }) => {
   };
 
   const handleDeletes = () => {
-    deleteBlog(blog);
+    const confirm = window.confirm(`delete blog ${blog.title} by ${blog.author}`);
+
+    if (confirm) {
+      deleteBlog(blog);
+    }
   };
 
   return (

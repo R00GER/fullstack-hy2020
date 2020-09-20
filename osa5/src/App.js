@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Blogs from './components/Blogs';
 import blogService from './services/blogs';
 import loginService from './services/login';
@@ -13,6 +13,8 @@ const App = () => {
   const [blogs, setBlogs] = useState([]);
   const [user, setUser] = useState(null);
   const [notification, setNotification] = useState(null);
+
+  const blogFormRef = useRef();
 
   useEffect(() => {
     const getAllBlogs = async () => {
@@ -58,6 +60,7 @@ const App = () => {
 
   const addBlog = async (newBlog) => {
     try {
+      blogFormRef.current.toggleVisibility();
       const blog = await blogService.create(newBlog);
       setBlogs(blogs.concat(blog));
       handleNotifications(`blog "${newBlog.title}" by ${newBlog.author} added`, 'success');
@@ -94,7 +97,7 @@ const App = () => {
       ) : (
         <>
           <UserInfo handleLogout={handleLogout} user={user} />
-          <Toggable>
+          <Toggable ref={blogFormRef}>
             <BlogForm createNewBlog={addBlog} />
           </Toggable>
           <Blogs likes={handleLikes} deleteBlog={handleDeletes} blogs={blogs} user={user} />

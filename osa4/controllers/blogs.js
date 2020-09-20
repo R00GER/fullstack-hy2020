@@ -32,20 +32,19 @@ blogsRouter.post('/', async (req, res) => {
     title: body.title,
     author: body.author,
     url: body.url,
-    likes: body.likes === '' ? 0 : body.likes,
-    user: user._id,
+    likes: !body.likes ? 0 : body.likes,
+    user,
   });
 
   const savedBlog = await blog.save();
   user.blogs = user.blogs.concat(savedBlog._id);
   await user.save();
-
   return res.json(savedBlog);
 });
 
 blogsRouter.put('/:id', async (req, res) => {
   const foundedBlog = await Blog.findById(req.params.id);
-  const updatedLikes = { ...foundedBlog._doc, likes: req.body.likes };
+  const updatedLikes = { ...foundedBlog._doc, likes: req.body.likes + 1 };
   const updatedBlog = await Blog.findByIdAndUpdate(req.params.id, updatedLikes, { new: true });
   res.json(updatedBlog);
 });

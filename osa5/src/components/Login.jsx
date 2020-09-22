@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
 const Login = ({ login }) => {
   const [userCredentials, setUserCredentials] = useState({ username: '', password: '' });
@@ -10,8 +11,8 @@ const Login = ({ login }) => {
     width: '290px',
     marginBottom: '1em',
   };
-  
-  const inputStyles = {
+
+  const labelStyles = {
     marginBottom: '.2em',
     display: 'flex',
     justifyContent: 'space-between',
@@ -28,31 +29,35 @@ const Login = ({ login }) => {
     event.preventDefault();
     login(userCredentials);
 
-    setUserCredentials({username: '', password: ''})
-  }
+    setUserCredentials({ username: '', password: '' });
+  };
 
   return (
     <>
       <h2>log in to application</h2>
       <form style={formStyles} onSubmit={handleLogin}>
-        <div style={inputStyles}>
-          <label htmlFor="username">Username:</label>
-          <input
-            onChange={handleUser}
-            value={userCredentials.username}
-            type="text"
-            name="username"
-          />
+        <div>
+          <label style={labelStyles} htmlFor="username">
+            Username:
+            <input
+              onChange={handleUser}
+              value={userCredentials.username}
+              type="text"
+              name="username"
+            />
+          </label>
         </div>
-        <div style={inputStyles}>
-          <label htmlFor="password">Password:</label>
-          <input
-            onChange={handleUser}
-            value={userCredentials.password}
-            type="password"
-            name="password"
-            autoComplete="on"
-          />
+        <div>
+          <label style={labelStyles} htmlFor="password">
+            Password:
+            <input
+              onChange={handleUser}
+              value={userCredentials.password}
+              type="password"
+              name="password"
+              autoComplete="on"
+            />
+          </label>
         </div>
         <div>
           <button type="submit">Login</button>
@@ -60,6 +65,10 @@ const Login = ({ login }) => {
       </form>
     </>
   );
+};
+
+Login.propTypes = {
+  login: PropTypes.func.isRequired,
 };
 
 export default Login;

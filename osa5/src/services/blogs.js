@@ -1,4 +1,5 @@
 import axios from 'axios';
+
 const baseUrl = '/api/blogs';
 
 let token = null;
@@ -33,6 +34,8 @@ const deleteBlog = async (blog) => {
 
   const response = await axios.delete(`${baseUrl}/${blog.id}`, config);
   return response.data;
-}
+};
 
-export default { getAll, create, setToken, update, deleteBlog };
+export default {
+  getAll, create, setToken, update, deleteBlog,
+};

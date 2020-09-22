@@ -43,9 +43,9 @@ blogsRouter.post('/', async (req, res) => {
 });
 
 blogsRouter.put('/:id', async (req, res) => {
-  const foundedBlog = await Blog.findById(req.params.id);
-  const updatedLikes = { ...foundedBlog._doc, likes: req.body.likes + 1 };
-  const updatedBlog = await Blog.findByIdAndUpdate(req.params.id, updatedLikes, { new: true });
+  const blog = req.body;
+  const { id } = req.params;
+  const updatedBlog = await Blog.findByIdAndUpdate(id, blog, { new: true });
   res.json(updatedBlog);
 });
 

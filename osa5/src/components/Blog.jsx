@@ -1,5 +1,14 @@
 import React, { useState } from 'react';
-const Blog = ({ blog, likes, deleteBlog, user }) => {
+import PropTypes from 'prop-types';
+
+const Blog = (
+  {
+    blog,
+    likes,
+    confirm,
+    user,
+  },
+) => {
   const [showBlog, setShowBlog] = useState(false);
 
   const viewBlog = () => {
@@ -11,32 +20,30 @@ const Blog = ({ blog, likes, deleteBlog, user }) => {
   };
 
   const handleDeletes = () => {
-    const confirm = window.confirm(`delete blog ${blog.title} by ${blog.author}`);
-
-    if (confirm) {
-      deleteBlog(blog);
-    }
+    confirm(blog);
   };
 
   return (
     <div className="blog-container">
       <div className="blog-short">
         <div>{`${blog.title} by ${blog.author}`}</div>
-        <button onClick={viewBlog}>{showBlog ? 'hide' : 'view'}</button>
+        <button onClick={viewBlog} type="button">
+          {showBlog ? 'hide' : 'view'}
+        </button>
       </div>
       {showBlog && (
         <>
           <div>{blog.url}</div>
           <div className="blog-likes">
             <div>{`likes ${blog.likes}`}</div>
-            <button className="like-btn" onClick={handleLikes}>
+            <button className="like-btn" type="button" onClick={handleLikes}>
               like
             </button>
           </div>
           <div>{blog.user.name}</div>
           {user.username === blog.user.username && (
-            <button className="remove-btn" onClick={handleDeletes}>
-              remove
+            <button className="remove-btn" type="button" onClick={handleDeletes}>
+              delete
             </button>
           )}
         </>
@@ -46,3 +53,10 @@ const Blog = ({ blog, likes, deleteBlog, user }) => {
 };
 
 export default Blog;
+
+Blog.propTypes = {
+  blog: PropTypes.instanceOf(Object).isRequired,
+  likes: PropTypes.func.isRequired,
+  confirm: PropTypes.func.isRequired,
+  user: PropTypes.instanceOf(Object).isRequired,
+};

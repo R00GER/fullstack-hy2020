@@ -12,7 +12,7 @@
 * [x] 5.4*: blogilistan frontend, step4
   * Laajenna sovellusta siten, että kirjautunut käyttäjä voi luoda uusia blogeja.
 
-"*" = vapaaehtoinen tehtävä
+&ast = vapaaehtoinen tehtävä
 
 [ ] click event outside of component (minify blog when clicking outside)
 [x] window.confirm when removing blogs

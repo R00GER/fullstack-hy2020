@@ -1,6 +1,7 @@
-# fullstack-hy2020 - https://fullstackopen.com/
+# FULL STACK -WEBSOVELLUSKEHITYS, MOOC, 2020 - https://fullstackopen.com/
+## SYVÄSUKELLUS MODERNIIN WEBSOVELLUSKEHITYKSEEN
 
-#### Osa kolme repossa https://github.com/R00GER/fullstack-hy2020-puhelinluettelo-backend
+### HUOM: Osa kolme repossa https://github.com/R00GER/fullstack-hy2020-puhelinluettelo-backend
 
 ### Yleistä 
 Kurssilla tutustutaan JavaScriptilla tapahtuvaan moderniin websovelluskehitykseen. Pääpaino on React-kirjaston avulla toteutettavissa single page -sovelluksissa, ja niitä tukevissa Node.js:llä toteutetuissa REST-rajapinnoissa. Kurssilla tutustutaan myös GraphQL:n eli REST:ille vaihtoehtoiseen rajapintojen toteutusperiaatteeseen

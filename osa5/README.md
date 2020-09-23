@@ -2,6 +2,7 @@
 
 ### Tehtävät
 
+### Kirjautuminen frontendissä
 * [x] **5.1: blogilistan frontend, step1**
   * Toteuta frontendiin kirjautumisen mahdollistava toiminnallisuus. Kirjautumisen yhteydessä backendin palauttama token tallennetaan sovelluksen tilaan user. Jos käyttäjä ei ole kirjautunut, sivulla näytetään pelkästään kirjautumislomake. Kirjautuneelle käyttäjälle näytetään kirjautuneen käyttäjän nimi sekä blogien lista. Tässä vaiheessa kirjautuneiden käyttäjien tietoja ei vielä tarvitse muistaa local storagen avulla.
 * [x] **5.2: blogilistan frontend, step2**
@@ -10,6 +11,9 @@
   * Laajenna sovellusta siten, että kirjautunut käyttäjä voi luoda uusia blogeja.
 * [x] **5.4\*: blogilistan frontend, step4**
   * Toteuta sovellukseen notifikaatiot, jotka kertovat sovelluksen yläosassa onnistuneista ja epäonnistuneista toimenpiteistä. Notifikaation tulee olla näkyvillä muutaman sekunnin ajan. Värien lisääminen ei ole pakollista.
+
+
+  ### Props.children ja PropTypet
 * [x] **5.5: blogilistan frontend, step5**
   * Tee blogin luomiseen käytettävästä lomakkeesta ainoastaan tarvittaessa näytettävä osan 5 luvun Kirjautumislomakkeen näyttäminen vain tarvittaessa tapaan. Voit halutessasi hyödyntää osassa 5 määriteltyä komponenttia Togglable. Lomake ei ole oletusarvoisesti näkyvillä. Klikkaamalla nappia new note lomake aukeaa. Lomakkeen tulee sulkeutua kun uusi blogi luodaan.
 * [x] **5.6 blogilistan frontend, step6**
@@ -22,6 +26,9 @@
   * Järjestä sovellus näyttämään blogit likejen mukaisessa suuruusjärjestyksessä. Järjestäminen onnistuu taulukon metodilla sort.
 * [x] **5.10\*: blogilistan frontend, step10**
   * Lisää nappi blogin poistamiselle. Toteuta myös poiston tekevä logiikka. Näytä poistonappi ainoastaan jos kyseessä on kirjautuneen käyttäjän lisäämä blogi.
+
+
+  ### Proptypet ja Eslint
 * [x] **5.11: blogilistan frontend, step11**
   * Määrittele joillekin sovelluksesi komponenteille PropTypet.
 * [x] **5.12: blogilistan frontend, step12**

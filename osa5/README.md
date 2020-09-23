@@ -13,7 +13,7 @@
   * Toteuta sovellukseen notifikaatiot, jotka kertovat sovelluksen yläosassa onnistuneista ja epäonnistuneista toimenpiteistä. Notifikaation tulee olla näkyvillä muutaman sekunnin ajan. Värien lisääminen ei ole pakollista.
 
 
-  ### Props.children ja PropTypet
+### Props.children ja PropTypet
 * [x] **5.5: blogilistan frontend, step5**
   * Tee blogin luomiseen käytettävästä lomakkeesta ainoastaan tarvittaessa näytettävä osan 5 luvun Kirjautumislomakkeen näyttäminen vain tarvittaessa tapaan. Voit halutessasi hyödyntää osassa 5 määriteltyä komponenttia Togglable. Lomake ei ole oletusarvoisesti näkyvillä. Klikkaamalla nappia new note lomake aukeaa. Lomakkeen tulee sulkeutua kun uusi blogi luodaan.
 * [x] **5.6 blogilistan frontend, step6**
@@ -28,10 +28,35 @@
   * Lisää nappi blogin poistamiselle. Toteuta myös poiston tekevä logiikka. Näytä poistonappi ainoastaan jos kyseessä on kirjautuneen käyttäjän lisäämä blogi.
 
 
-  ### Proptypet ja Eslint
+### Proptypet ja Eslint
 * [x] **5.11: blogilistan frontend, step11**
   * Määrittele joillekin sovelluksesi komponenteille PropTypet.
 * [x] **5.12: blogilistan frontend, step12**
   * Ota projektiin käyttöön ESlint. Määrittele haluamasi kaltainen konfiguraatio. Korjaa kaikki lint-virheet.
+
+
+### React -sovelluksen testaaminen
+* [ ] **5.13: blogilistan testit, step1**
+  * Tee testi, joka varmistaa että blogin näyttävä komponentti renderöi blogin titlen, authorin mutta ei renderöi oletusarvoisesti urlia eikä likejen määrää.
+* [ ] **5.14: blogilistan testit, step2**
+  * Tee testi, joka varmistaa että myös url ja likejen määrä näytetään kun blogin kaikki tiedot näyttävää nappia on painettu.
+* [ ] **5.15: blogilistan testit, step3**
+  * Tee testi, joka varmistaa, että jos komponentin like-nappia painetaan kahdesti, komponentin propsina saamaa tapahtumankäsittelijäfunktiota kutsutaan kaksi kertaa.
+* [ ] **5.16\*: blogilistan testit, step4**
+  * Tee uuden blogin luomisesta huolehtivalle lomakkelle testi, joka varmistaa, että lomake kutsuu propseina saamaansa takaisinkutsufunktiota oikeilla tiedoilla siinä vaiheessa kun blogi luodaan. Lisää komponenttiin tarvittaessa testausta helpottavia CSS-luokkia tai id:itä. Jos esim. määrittelet input-elementille id:n 'author'.
+
+### End to end -testaus
+* [ ] **5.17: blogilistan end to end -testit, step1**
+  * Konfiguroi Cypress projektiisi. Tee testi, joka varmistaa, että sovellus näyttää oletusarvoisesti kirjautumislomakkeen. Testin beforeEach-alustuslohkon tulee nollata tietokannan tilanne esim. materiaalissa näytetyllä tavalla.
+* [ ] **5.18: blogilistan end to end -testit, step2**
+  * Tee testit kirjautumiselle, testaa sekä onnistunut että epäonnistunut kirjautuminen. Luo testejä varten käyttäjä beforeEach-lohkossa. Vapaaehtoinen bonustehtävä: varmista, että epäonnistuneeseen kirjautumiseen liittyvä notifikaatio näytetään punaisella.
+* [ ] **5.19: blogilistan end to end -testit, step3**
+  * Tee testi, joka varmistaa, että kirjaantunut käyttäjä pystyy luomaan blogin. Testin tulee varmistaa, että luotu blogi tulee näkyville blogien listalle.
+* [ ] **5.20: blogilistan end to end -testit, step4**
+  * Tee testi, joka varmistaa, että blogia voi likettää.
+* [ ] **5.21: blogilistan end to end -testit, step5**
+  * Tee testi, joka varmistaa, että blogin lisännyt käyttäjä voi poistaa blogin. Vapaaehtoinen bonustehtävä: varmista myös että poisto ei onnistu muilta kuin blogin lisänneeltä käyttäjältä.
+* [ ] **5.22: blogilistan end to end -testit, step6**
+  * Tee testi, joka varmistaa, että blogit järjestetään likejen mukaiseen järjestykseen, eniten likejä saanut blogi ensin. Tämä tehtävä saattaa olla hieman edeltäviä haastavampi. Eräs ratkaisutapa on etsiä kaikki blogit ja tarkastella tulosta then-komennon takaisinkutsufunktiossa.
 
 \* = vapaaehtoinen tehtävä

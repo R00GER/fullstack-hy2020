@@ -8,57 +8,57 @@ Tämän vuoden kurssi sisältää myös uuden, TypeScriptiä käsittelevän osan
 Kurssilla käsitellään myös sovellusten testaamista, konfigurointia ja suoritusympäristöjen hallintaa sekä MongoDB-tietokannan käyttöä sovelluksen tietojen tallettamiseen
 
 ### Kurssin sisältö
-* [x] Osa 0 - Web-sovellusten toiminnan perusteet
-* [x] Osa 1 - Reactin perusteet
+* [x] **Osa 0 - Web-sovellusten toiminnan perusteet**
+* [x] **Osa 1 - Reactin perusteet**
   * [x] Reactin alkeet
   * [x] JavaScriptiä
   * [x] Komponentin tila ja tapahtumakäsittely
   * [x] Monimutkaisempi tila, Reactin debuggaus
-* [x] Osa 2 - Palvelimen kanssa tapahtuva kommunikointi
+* [x] **Osa 2 - Palvelimen kanssa tapahtuva kommunikointi**
   * [x] Kokoelmien renderöinti ja moduulit
   * [x] Lomakkeiden käsittely
   * [x] Palvelimella olevan datan hakeminen
   * [x] Palvelimella olevan datan muokkaaminen
   * [x] Tyylien lisääminen React -sovellukseen
-* [x] Osa 3 - Palvelimen ohjelmointi NodeJS:n Express-kirjastolla
+* [x] **Osa 3 - Palvelimen ohjelmointi NodeJS:n Express-kirjastolla**
   * [x] Node.js ja Express
   * [x] Sovellus internettiin
   * [x] Tietojen tallentaminen MongoDB-tietokantaan
   * [x] Validointi ja Eslint
-* [x] Osa 4 - Express-sovellusten testaaminen, käyttäjänhallinta
+* [x] **Osa 4 - Express-sovellusten testaaminen, käyttäjänhallinta**
   * [x] Sovelluksen rakenne ja testauksen alkeet
   * [x] Backendin testaaminen
   * [x] Käyttäjien hallinta
   * [x] Token-perustainen kirjautuminen
-* [ ] Osa 5 - React-sovelluksen testaaminen
+* [ ] **Osa 5 - React-sovelluksen testaaminen**
   * [x] Kirjautuminen frontendissä
   * [x] Props.children ja proptypet
   * [x] React-sovelluksen testaaminen
   * [ ] End to end -testaus
-* [ ] Osa 6 - Sovelluksen tilan hallinta Redux-kirjastolla
+* [ ] **Osa 6 - Sovelluksen tilan hallinta Redux-kirjastolla**
   * [ ] Flux-arkkitehtuuri ja Redux
   * [ ] Monta reduseria
   * [ ] Redux-sovelluksen kommunikointi palvelimen kanssa
   * [ ] connect
-* [ ] Osa 7 - React router, custom-hookit, tyylikirjastot ja webpack
+* [ ] **Osa 7 - React router, custom-hookit, tyylikirjastot ja webpack**
   * [ ] React-router
   * [ ] Custom-hookit
   * [ ] Lisää tyyleistä
   * [ ] Webpack
   * [ ] Luokkakomponentit, sekalaista
   * [ ] Tehtäviä: blogilistan laajennus
-* [ ] Osa 8 - GraphQL
+* [ ] **Osa 8 - GraphQL**
   * [ ] GraphQL-palvelin
   * [ ] React ja GraphQL
   * [ ] Tietokanta ja käyttäjien hallinta
   * [ ] Kirjautuminen ja välimuistin päivitys
   * [ ] Fragmentit ja subskriptiot
-* [ ] Osa 9 - Typescript
+* [ ] **Osa 9 - Typescript**
   * [ ] Background and introduction
   * [ ] First steps with Typescript
   * [ ] Typing the Express app
   * [ ] React with types
-* [ ] Osa 10 - React Native
+* [ ] **Osa 10 - React Native**
   * [ ] Introduction to React Native
   * [ ] React Native basics
   * [ ] Communicationg with server

@@ -26,27 +26,27 @@ const Blog = (
   return (
     <div className="blog-container">
       <div className="blog-short">
-        <div>{`${blog.title} by ${blog.author}`}</div>
+        <div className="blog-short-text">{`${blog.title} by ${blog.author}`}</div>
         <button onClick={viewBlog} type="button">
           {showBlog ? 'hide' : 'view'}
         </button>
       </div>
       {showBlog && (
-        <>
-          <div>{blog.url}</div>
-          <div className="blog-likes">
-            <div>{`likes ${blog.likes}`}</div>
+        <div className="blog-full">
+          <div className="blog-full-url">{blog.url}</div>
+          <div className="blog-likes-container">
+            <div className="blog-full-likes">{`likes ${blog.likes}`}</div>
             <button className="like-btn" type="button" onClick={handleLikes}>
               like
             </button>
           </div>
-          <div>{blog.user.name}</div>
+          <div className="blog-full-user">{blog.user.name}</div>
           {user.username === blog.user.username && (
             <button className="remove-btn" type="button" onClick={handleDeletes}>
               delete
             </button>
           )}
-        </>
+        </div>
       )}
     </div>
   );

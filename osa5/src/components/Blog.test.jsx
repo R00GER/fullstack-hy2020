@@ -33,10 +33,6 @@ describe('when rendering blogs', () => {
 });
 
 describe('when clicking buttons', () => {
-  beforeEach(() => {
-    console.error = jest.fn();
-  });
-
   test('full blog with url and likes are rendered', () => {
     const blog = {
       title: 'Personal blog of Dan Abramov',

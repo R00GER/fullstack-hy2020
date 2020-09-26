@@ -40,9 +40,9 @@
   * Tee testi, joka varmistaa että blogin näyttävä komponentti renderöi blogin titlen, authorin mutta ei renderöi oletusarvoisesti urlia eikä likejen määrää.
 * [x] **5.14: blogilistan testit, step2**
   * Tee testi, joka varmistaa että myös url ja likejen määrä näytetään kun blogin kaikki tiedot näyttävää nappia on painettu.
-* [ ] **5.15: blogilistan testit, step3**
+* [x] **5.15: blogilistan testit, step3**
   * Tee testi, joka varmistaa, että jos komponentin like-nappia painetaan kahdesti, komponentin propsina saamaa tapahtumankäsittelijäfunktiota kutsutaan kaksi kertaa.
-* [ ] **5.16\*: blogilistan testit, step4**
+* [x] **5.16\*: blogilistan testit, step4**
   * Tee uuden blogin luomisesta huolehtivalle lomakkelle testi, joka varmistaa, että lomake kutsuu propseina saamaansa takaisinkutsufunktiota oikeilla tiedoilla siinä vaiheessa kun blogi luodaan. Lisää komponenttiin tarvittaessa testausta helpottavia CSS-luokkia tai id:itä.
 
 ### End to end -testaus

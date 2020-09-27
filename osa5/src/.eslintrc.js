@@ -1,0 +1,1 @@
+// moved in package.json, because Eslint did not find the config file

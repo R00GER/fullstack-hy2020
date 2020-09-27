@@ -30,7 +30,6 @@ const App = () => {
     getAllBlogs();
   }, []);
 
-  /* global window */
   useEffect(() => {
     const loggedBlogAppUser = window.localStorage.getItem('loggedBlogAppUser');
 

@@ -5,8 +5,6 @@ import Toggable from './Toggable';
 import BlogForm from './BlogForm';
 import Blog from './Blog';
 
-/* global describe, beforeEach, jest, test, afterAll, expect */
-/* eslint no-console: ["error", { allow: ["error"] }] */
 const originalError = console.error;
 
 describe('when rendering blogs', () => {

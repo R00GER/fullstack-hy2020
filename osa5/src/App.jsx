@@ -76,6 +76,7 @@ const App = () => {
   };
 
   const handleLikes = async (blogObject) => {
+    console.log('clicked from app');
     const updatedObject = {
       user: blogObject.user.id,
       likes: blogObject.likes + 1,

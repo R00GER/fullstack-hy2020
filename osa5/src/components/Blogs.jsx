@@ -5,11 +5,11 @@ import Blog from './Blog';
 const Blogs = ({
   blogs, likes, confirm, user,
 }) => (
-  <>
+  <div className="blogs">
     {blogs.map((blog) => (
       <Blog key={blog.id} blog={blog} likes={likes} confirm={confirm} user={user} />
     ))}
-  </>
+  </div>
 );
 
 Blogs.propTypes = {

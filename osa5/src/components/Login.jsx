@@ -35,11 +35,12 @@ const Login = ({ login }) => {
   return (
     <>
       <h2>log in to application</h2>
-      <form style={formStyles} onSubmit={handleLogin}>
+      <form id="login-form" style={formStyles} onSubmit={handleLogin}>
         <div>
           <label style={labelStyles} htmlFor="username">
             Username:
             <input
+              id="username"
               onChange={handleUser}
               value={userCredentials.username}
               type="text"
@@ -51,6 +52,7 @@ const Login = ({ login }) => {
           <label style={labelStyles} htmlFor="password">
             Password:
             <input
+              id="password"
               onChange={handleUser}
               value={userCredentials.password}
               type="password"

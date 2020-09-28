@@ -16,6 +16,7 @@ const Blog = (
   };
 
   const handleLikes = () => {
+    console.log('clicked');
     likes(blog);
   };
 
@@ -27,7 +28,7 @@ const Blog = (
     <div className="blog-container">
       <div className="blog-short">
         <div className="blog-short-text">{`${blog.title} by ${blog.author}`}</div>
-        <button onClick={viewBlog} type="button">
+        <button className="toggle-btn" onClick={viewBlog} type="button">
           {showBlog ? 'hide' : 'view'}
         </button>
       </div>
@@ -36,9 +37,7 @@ const Blog = (
           <div className="blog-full-url">{blog.url}</div>
           <div className="blog-likes-container">
             <div className="blog-full-likes">{`likes ${blog.likes}`}</div>
-            <button className="like-btn" type="button" onClick={handleLikes}>
-              like
-            </button>
+            <button className="like-btn" type="button" onClick={handleLikes}>like</button>
           </div>
           <div className="blog-full-user">{blog.user.name}</div>
           {user.username === blog.user.username && (

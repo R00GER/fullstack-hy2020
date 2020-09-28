@@ -46,17 +46,17 @@
   * Tee uuden blogin luomisesta huolehtivalle lomakkelle testi, joka varmistaa, että lomake kutsuu propseina saamaansa takaisinkutsufunktiota oikeilla tiedoilla siinä vaiheessa kun blogi luodaan. Lisää komponenttiin tarvittaessa testausta helpottavia CSS-luokkia tai id:itä.
 
 ### End to end -testaus
-* [ ] **5.17: blogilistan end to end -testit, step1**
+* [x] **5.17: blogilistan end to end -testit, step1**
   * Konfiguroi Cypress projektiisi. Tee testi, joka varmistaa, että sovellus näyttää oletusarvoisesti kirjautumislomakkeen. Testin beforeEach-alustuslohkon tulee nollata tietokannan tilanne esim. materiaalissa näytetyllä tavalla.
-* [ ] **5.18: blogilistan end to end -testit, step2**
+* [x] **5.18: blogilistan end to end -testit, step2**
   * Tee testit kirjautumiselle, testaa sekä onnistunut että epäonnistunut kirjautuminen. Luo testejä varten käyttäjä beforeEach-lohkossa. Vapaaehtoinen bonustehtävä: varmista, että epäonnistuneeseen kirjautumiseen liittyvä notifikaatio näytetään punaisella.
-* [ ] **5.19: blogilistan end to end -testit, step3**
+* [x] **5.19: blogilistan end to end -testit, step3**
   * Tee testi, joka varmistaa, että kirjaantunut käyttäjä pystyy luomaan blogin. Testin tulee varmistaa, että luotu blogi tulee näkyville blogien listalle.
-* [ ] **5.20: blogilistan end to end -testit, step4**
+* [x] **5.20: blogilistan end to end -testit, step4**
   * Tee testi, joka varmistaa, että blogia voi likettää.
-* [ ] **5.21: blogilistan end to end -testit, step5**
+* [x] **5.21: blogilistan end to end -testit, step5**
   * Tee testi, joka varmistaa, että blogin lisännyt käyttäjä voi poistaa blogin. Vapaaehtoinen bonustehtävä: varmista myös että poisto ei onnistu muilta kuin blogin lisänneeltä käyttäjältä.
-* [ ] **5.22: blogilistan end to end -testit, step6**
+* [x] **5.22: blogilistan end to end -testit, step6**
   * Tee testi, joka varmistaa, että blogit järjestetään likejen mukaiseen järjestykseen, eniten likejä saanut blogi ensin. Tämä tehtävä saattaa olla hieman edeltäviä haastavampi. Eräs ratkaisutapa on etsiä kaikki blogit ja tarkastella tulosta then-komennon takaisinkutsufunktiossa.
 
 \* = vapaaehtoinen tehtävä

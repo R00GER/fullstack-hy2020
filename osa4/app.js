@@ -40,6 +40,12 @@ app.use(getTokenFrom);
 app.use('/api/login', loginRouter);
 app.use('/api/users', usersRouter);
 app.use('/api/blogs', blogsRouter);
+
+if (process.env.NODE_ENV === 'test') {
+  const testRouter = require('./controllers/tests');
+  app.use('/api/testing', testRouter);
+}
+
 app.use(unknownEndpoint);
 app.use(errorHandler);
 

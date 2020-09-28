@@ -44,9 +44,11 @@ blogsRouter.post('/', async (req, res) => {
 
 blogsRouter.put('/:id', async (req, res) => {
   const blog = req.body;
+  console.log(blog);
   const { id } = req.params;
   const updatedBlog = await Blog.findByIdAndUpdate(id, blog, { new: true });
   res.json(updatedBlog);
+  console.log(updatedBlog);
 });
 
 blogsRouter.delete('/:id', async (req, res) => {
@@ -71,6 +73,13 @@ blogsRouter.delete('/:id', async (req, res) => {
   } else {
     return res.status(401).json({ error: 'not authorized to delete this post' });
   }
+});
+
+blogsRouter.post('/reset', async (req, res) => {
+  await Blog.deleteMany({});
+  await User.deleteMany({});
+
+  res.status(204).end();
 });
 
 module.exports = blogsRouter;

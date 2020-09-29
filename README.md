@@ -30,11 +30,11 @@ Kurssilla käsitellään myös sovellusten testaamista, konfigurointia ja suorit
   * [x] Backendin testaaminen
   * [x] Käyttäjien hallinta
   * [x] Token-perustainen kirjautuminen
-* [ ] **Osa 5 - React-sovelluksen testaaminen**
+* [x] **Osa 5 - React-sovelluksen testaaminen**
   * [x] Kirjautuminen frontendissä
   * [x] Props.children ja proptypet
-  * [ ] React-sovelluksen testaaminen
-  * [ ] End to end -testaus
+  * [x] React-sovelluksen testaaminen
+  * [x] End to end -testaus
 * [ ] **Osa 6 - Sovelluksen tilan hallinta Redux-kirjastolla**
   * [ ] Flux-arkkitehtuuri ja Redux
   * [ ] Monta reduseria

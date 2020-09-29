@@ -1,4 +1,4 @@
-# Blogilista frontend
+# React-sovelluksen testaaminen - Blogilista frontend
 
 ### Tehtävät
 

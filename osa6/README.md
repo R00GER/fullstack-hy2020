@@ -1,4 +1,4 @@
-# Unicafe-redux
+# Sovelluksen tilan hallinta Redux-kirjastolla
 
 ### Tehtävät
 

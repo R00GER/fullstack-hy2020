@@ -33,7 +33,7 @@ Kurssilla käsitellään myös sovellusten testaamista, konfigurointia ja suorit
 * [ ] **Osa 5 - React-sovelluksen testaaminen**
   * [x] Kirjautuminen frontendissä
   * [x] Props.children ja proptypet
-  * [x] React-sovelluksen testaaminen
+  * [ ] React-sovelluksen testaaminen
   * [ ] End to end -testaus
 * [ ] **Osa 6 - Sovelluksen tilan hallinta Redux-kirjastolla**
   * [ ] Flux-arkkitehtuuri ja Redux

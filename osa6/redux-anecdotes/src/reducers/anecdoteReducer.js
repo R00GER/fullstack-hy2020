@@ -44,9 +44,7 @@ const reducer = (state = initialState, action) => {
       const id = action.data.id;
       const foundedAnecdote = state.find((anecdote) => anecdote.id === id);
       const votedAnecdote = { ...foundedAnecdote, votes: foundedAnecdote.votes + 1 };
-      return state.map((anecdote) => {
-        return anecdote.id !== id ? anecdote : votedAnecdote;
-      });
+      return state.map((anecdote) => anecdote.id !== id ? anecdote : votedAnecdote);
     case 'CREATE_ANECDOTE':
       return [...state, action.data]
     default:

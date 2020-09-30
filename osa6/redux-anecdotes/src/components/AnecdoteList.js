@@ -1,9 +1,23 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { voteAnecdote } from '../reducers/anecdoteReducer';
+import { createVoteNotification, resetNotification } from '../reducers/notificationReducer';
 
 const AnecdoteList = () => {
-  const anecdotes = useSelector((state) => state);
+  const anecdotes = useSelector((state) => {
+    if (state.filterReducer === 'ALL') {
+      return state.anecdoteReducer;
+    }
+
+    const filteredAnecdotes = state.anecdoteReducer
+      .map((anecdote) => ({ ...anecdote, content: anecdote.content.toLowerCase() }))
+      .filter((anecdote) => anecdote.content.includes(state.filterReducer.toLowerCase()));
+
+    return state.anecdoteReducer.filter((anecdote) =>
+      filteredAnecdotes.some((filteredAnecdote) => filteredAnecdote.id === anecdote.id)
+    );
+  });
+  
   const dispatch = useDispatch();
 
   const buttonStyles = {
@@ -13,9 +27,14 @@ const AnecdoteList = () => {
     borderRadius: '5px',
   };
 
-  console.log(anecdotes);
   const vote = (id) => {
     dispatch(voteAnecdote(id));
+
+    const votedAnecdote = anecdotes.find((anecdote) => anecdote.id === id);
+    dispatch(createVoteNotification(votedAnecdote));
+    setTimeout(() => {
+      dispatch(resetNotification());
+    }, 5000);
   };
 
   return (

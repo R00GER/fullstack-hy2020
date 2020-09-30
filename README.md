@@ -37,7 +37,7 @@ Kurssilla käsitellään myös sovellusten testaamista, konfigurointia ja suorit
   * [x] End to end -testaus
 * [ ] **Osa 6 - Sovelluksen tilan hallinta Redux-kirjastolla**
   * [x] Flux-arkkitehtuuri ja Redux
-  * [ ] Monta reduseria
+  * [x] Monta reduseria
   * [ ] Redux-sovelluksen kommunikointi palvelimen kanssa
   * [ ] connect
 * [ ] **Osa 7 - React router, custom-hookit, tyylikirjastot ja webpack**

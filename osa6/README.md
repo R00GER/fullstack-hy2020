@@ -39,17 +39,17 @@
   Tee filtterin ruudulla näyttämistä varten komponentti Filter.
 
   ### Redux-sovelluksen kommunikointi palvelimen kanssa
-* [ ] **6.13 anekdootit ja backend, step1**
+* [x] **6.13 anekdootit ja backend, step1**
   * Hae sovelluksen käynnistyessä anekdootit json-serverillä toteutetusta backendistä.
-* [ ] **6.14 anekdootit ja backend, step2**
+* [x] **6.14 anekdootit ja backend, step2**
   * Muuta uusien anekdoottien luomista siten, että anekdootit talletetaan backendiin.
-* [ ] **6.15 anekdootit ja backend, step3**
+* [x] **6.15 anekdootit ja backend, step3**
   * Muuta redux-storen alustus tapahtumaan redux-thunk-kirjaston avulla toteutettuun asynkroniseen actioniin.
-* [ ] **6.16 anekdootit ja backend, step4**
+* [x] **6.16 anekdootit ja backend, step4**
   * Muuta myös uuden anekdootin luominen tapahtumaan redux-thunk-kirjaston avulla toteutettuihin asynkronisiin actioneihin.
-* [ ] **6.17 anekdootit ja backend, step5**
+* [x] **6.17 anekdootit ja backend, step5**
   * Äänestäminen ei vielä talleta muutoksia backendiin. Korjaa tilanne redux-thunk-kirjastoa hyödyntäen.
-* [ ] **6.18 anekdootit ja backend, step6**
+* [x] **6.18 anekdootit ja backend, step6**
   * Notifikaatioiden tekeminen on nyt hieman ikävää, sillä se edellyttää kahden actionin tekemistä ja setTimeout-funktion käyttöä. Tee asynkroninen action creator, joka mahdollistaa notifikaation antamisen, ensimmäisenä parametrina on renderöitävä teksti ja toisena notifikaation näyttöaika sekunneissa.
 
   Ota paranneltu notifikaatiotapa käyttöön sovelluksessasi.

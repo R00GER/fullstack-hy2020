@@ -1,14 +1,20 @@
+const timer = {
+  timeout: null,
+};
+
 export const createVoteNotification = (notification, delay) => {
   return async (dispatch) => {
     dispatch({
       type: 'VOTE_NOTIFICATION',
       notification,
     });
-    await wait(delay);
-    dispatch({
-      type: 'RESET_NOTIFICATION',
-      notification: null,
-    });
+    cancelTimeout();
+    timer.timeout = setTimeout(() => {
+      dispatch({
+        type: 'RESET_NOTIFICATION',
+        notification: null,
+      });
+    }, delay * 1000);
   };
 };
 
@@ -18,18 +24,19 @@ export const createAnecdoteNotification = (notification, delay) => {
       type: 'NEW_ANECDOTE_NOTIFICATION',
       notification,
     });
-    await wait(delay);
-    dispatch({
-      type: 'RESET_NOTIFICATION',
-      notification: null,
-    });
+    cancelTimeout();
+    timer.timeout = setTimeout(() => {
+      dispatch({
+        type: 'RESET_NOTIFICATION',
+        notification: null,
+      });
+    }, delay * 1000);
   };
 };
 
-const wait = (delay) =>
-  new Promise((resolve) => {
-    setTimeout(resolve, delay * 1000);
-  });
+const cancelTimeout = () => {
+  clearTimeout(timer.timeout);
+};
 
 const notificationReducer = (state = '', action) => {
   switch (action.type) {

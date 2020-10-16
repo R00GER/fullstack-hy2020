@@ -55,11 +55,11 @@
   Ota paranneltu notifikaatiotapa käyttöön sovelluksessasi.
 
 ### Connect
-* [ ] **6.19: anekdootit ja connect, step1**
+* [x] **6.19: anekdootit ja connect, step1**
   * Muuta notifikaatioiden näyttämisestä huolehtiva komponentti käyttämään useSelector-hookin sijaan connect-funktiota.
-* [ ] **6.20: anekdootit ja connect, step2**
+* [x] **6.20: anekdootit ja connect, step2**
   * Tee sama komponentille AnecdoteForm.
-* [ ] **6.21: anekdootit, loppuhuipennus**
+* [x] **6.21: anekdootit, loppuhuipennus**
   * Sovellukseen on (todennäköisesti) jäänyt eräs hieman ikävä bugi. Jos vote-näppäintä painellaan useasti peräkkäin, notifikaatio näkyy ruudulla hieman miten sattuu. Esimerkiksi jos äänestetään kaksi kertaa kolmen sekunnin välein, näkyy jälkimmäinen notifikaatio ruudulla ainoastaan kahden sekunnin verran (olettaen että notifikaation näyttöaika on 5 sekuntia). Tämä johtuu siitä, että ensimmäisen äänestyksen notifikaation tyhjennys tyhjentääkin myöhemmän äänestyksen notifikaation.
 
   Korjaa bugi, siten että usean peräkkäisen äänestyksen viimeistä notifikaatiota näytetään aina viiden sekunnin ajan. Korjaus tapahtuu siten, että uuden notifikaation tullessa edellisen notifikaation nollaus tarvittaessa perutaan, ks. funktion setTimeout dokumentaatio.

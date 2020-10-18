@@ -9,7 +9,7 @@ import AnecdoteList from './pages/AnecdoteList';
 import Anecdote from './components/Anecdote';
 import CreateNew from './pages/createNew';
 import Footer from './components/Footer';
-import { initialAnecdotes } from './constants';
+import { initialAnecdotes } from './anecdotes';
 
 const App = () => {
   const [anecdotes, setAnecdotes] = useState(initialAnecdotes);

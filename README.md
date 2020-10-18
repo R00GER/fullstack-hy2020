@@ -35,13 +35,13 @@ Kurssilla käsitellään myös sovellusten testaamista, konfigurointia ja suorit
   * [x] Props.children ja proptypet
   * [x] React-sovelluksen testaaminen
   * [x] End to end -testaus
-* [ ] **Osa 6 - Sovelluksen tilan hallinta Redux-kirjastolla**
+* [x] **Osa 6 - Sovelluksen tilan hallinta Redux-kirjastolla**
   * [x] Flux-arkkitehtuuri ja Redux
   * [x] Monta reduseria
   * [x] Redux-sovelluksen kommunikointi palvelimen kanssa
-  * [ ] connect
+  * [x] connect
 * [ ] **Osa 7 - React router, custom-hookit, tyylikirjastot ja webpack**
-  * [ ] React-router
+  * [x] React-router
   * [ ] Custom-hookit
   * [ ] Lisää tyyleistä
   * [ ] Webpack

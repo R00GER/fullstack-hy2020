@@ -45,7 +45,7 @@
   Maan tietojan hakeminen kannattaa hoitaa apin endpointin full name avulla, hookin sisällä olevassa useEffect-hookissa.
 
   Huomaa, että tässä tehtävässä on oleellista hyödyntää useEffectin toisena parametrina olevaa taulukkoa sen kontrolloimiseen milloin efektifunktio kannattaa suorittaa.
-* [ ] **7.8\*: ultimate hooks**
+* [x] **7.8\*: ultimate hooks**
   * Aiempien osien materiaalissa kehitetyn muistiinpanosovelluksen palvelimen kanssa keskusteleva koodi näyttää seuraavalta: *kuva koodista*. 
 
   Huomaamme, että koodi ei itseasiassa välitä ollenkaan siitä että se käsittelee nimenomaan muistiinpanoja. Muuttujan baseUrl arvoa lukuunottamatta käytännössä sama koodi voi hoitaa blogisovelluksen frontendin ja backendin kommunikointia.

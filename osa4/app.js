@@ -8,7 +8,6 @@ const blogsRouter = require('./controllers/blogs');
 const usersRouter = require('./controllers/users');
 const loginRouter = require('./controllers/login');
 const { unknownEndpoint, errorHandler, getTokenFrom } = require('./utils/middleware');
-// const getTokenFrom = require('./utils/getToken');
 
 const app = express();
 const { MONGODB_URI, TEST_MONGODB_URI } = config;

@@ -1,3 +1,1 @@
-# React router, custom-hookit, tyylikirjastot ja webpack
-
-### Tehtävät
+### Backend repossa https://github.com/R00GER/fullstack-hy2020/tree/master/osa4

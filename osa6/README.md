@@ -14,7 +14,7 @@
 * [x] **6.5\*: anekdootit, step3**
   * Huolehdi siitä, että anekdootit pysyvät äänten mukaisessa suuruusjärjestyksessä.
 * [x] **6.6: anekdootit, step4**
-  * Jos et jo sitä tehnyt, eriytä action-olioiden luominen action creator -funktioihin ja sijoita ne tiedostoon src/reducers/anecdoteReducer.js. Eli toimi samalla tavalla kuin materiaali esimerkissä kohdasta action creator alkaen on toimittu.
+  * Jos et jo sitä tehnyt, eriytä action-olioiden luominen action creator -funktioihin ja sijoita ne tiedostoon src/reducers/anecdoteReducer.js. Eli toimi samalla tavalla kuin       materiaali esimerkissä kohdasta action creator alkaen on toimittu.
 * [x] **6.7: anekdootit, step5**
   * Eriytä uuden anekdootin luominen omaksi komponentikseen nimeltään AnecdoteForm. Siirrä kaikki anekdootin luomiseen liittyvä logiikka uuteen komponenttiin.
 * [x] **6.8: anekdootit, step6**
@@ -26,17 +26,17 @@
 * [x] **6.10: anekdootit, step8**
   * Sovelluksessa on valmiina komponentin Notification runko. Laajenna komponenttia siten, että se renderöi redux-storeen talletetun viestin. 
 
-  Joudut siis muuttamaan/laajentamaan sovelluksen olemassaolevaa reduceria. Tee toiminnallisuutta varten oma reduceri ja siirry käyttämään sovelluksessa yhdistettyä reduceria tämän osan materiaalin tapaan.
+    Joudut siis muuttamaan/laajentamaan sovelluksen olemassaolevaa reduceria. Tee toiminnallisuutta varten oma reduceri ja siirry käyttämään sovelluksessa yhdistettyä reduceria     tämän osan materiaalin tapaan.
 
-  Tässä vaiheessa sovelluksen ei vielä tarvitse osata käyttää Notification komponenttia järkevällä tavalla, riittää että sovellus toimii ja näyttää notificationReducerin alkuarvoksi asettaman viestin.
+    Tässä vaiheessa sovelluksen ei vielä tarvitse osata käyttää Notification komponenttia järkevällä tavalla, riittää että sovellus toimii ja näyttää notificationReducerin           alkuarvoksi asettaman viestin.
 * [x] **6.11: paremmat anekdootit, step9**
   * Laajenna sovellusta siten, että se näyttää Notification-komponentin avulla viiden sekunnin ajan, kun sovelluksessa äänestetään tai luodaan uusia anekdootteja.
 
-  Notifikaation asettamista ja poistamista varten kannattaa toteuttaa action creatorit. 
+    Notifikaation asettamista ja poistamista varten kannattaa toteuttaa action creatorit. 
 * [x] **6.12\*: paremmat anekdootit, step10**
-  * Toteuta sovellukseen näytettävien muistiinpanojen filtteröiminen. Säilytä filtterin tila redux storessa, eli käytännössä kannattaa jälleen luoda uusi reduceri ja action creatorit.
+  * Toteuta sovellukseen näytettävien muistiinpanojen filtteröiminen. Säilytä filtterin tila redux storessa, eli käytännössä kannattaa jälleen luoda uusi reduceri ja action         creatorit.
 
-  Tee filtterin ruudulla näyttämistä varten komponentti Filter.
+    Tee filtterin ruudulla näyttämistä varten komponentti Filter.
 
   ### Redux-sovelluksen kommunikointi palvelimen kanssa
 * [x] **6.13 anekdootit ja backend, step1**
@@ -50,9 +50,9 @@
 * [x] **6.17 anekdootit ja backend, step5**
   * Äänestäminen ei vielä talleta muutoksia backendiin. Korjaa tilanne redux-thunk-kirjastoa hyödyntäen.
 * [x] **6.18 anekdootit ja backend, step6**
-  * Notifikaatioiden tekeminen on nyt hieman ikävää, sillä se edellyttää kahden actionin tekemistä ja setTimeout-funktion käyttöä. Tee asynkroninen action creator, joka mahdollistaa notifikaation antamisen, ensimmäisenä parametrina on renderöitävä teksti ja toisena notifikaation näyttöaika sekunneissa.
+  * Notifikaatioiden tekeminen on nyt hieman ikävää, sillä se edellyttää kahden actionin tekemistä ja setTimeout-funktion käyttöä. Tee asynkroninen action creator, joka             mahdollistaa notifikaation antamisen, ensimmäisenä parametrina on renderöitävä teksti ja toisena notifikaation näyttöaika sekunneissa.
 
-  Ota paranneltu notifikaatiotapa käyttöön sovelluksessasi.
+    Ota paranneltu notifikaatiotapa käyttöön sovelluksessasi.
 
 ### Connect
 * [x] **6.19: anekdootit ja connect, step1**
@@ -60,8 +60,8 @@
 * [x] **6.20: anekdootit ja connect, step2**
   * Tee sama komponentille AnecdoteForm.
 * [x] **6.21: anekdootit, loppuhuipennus**
-  * Sovellukseen on (todennäköisesti) jäänyt eräs hieman ikävä bugi. Jos vote-näppäintä painellaan useasti peräkkäin, notifikaatio näkyy ruudulla hieman miten sattuu. Esimerkiksi jos äänestetään kaksi kertaa kolmen sekunnin välein, näkyy jälkimmäinen notifikaatio ruudulla ainoastaan kahden sekunnin verran (olettaen että notifikaation näyttöaika on 5 sekuntia). Tämä johtuu siitä, että ensimmäisen äänestyksen notifikaation tyhjennys tyhjentääkin myöhemmän äänestyksen notifikaation.
+  * Sovellukseen on (todennäköisesti) jäänyt eräs hieman ikävä bugi. Jos vote-näppäintä painellaan useasti peräkkäin, notifikaatio näkyy ruudulla hieman miten sattuu.               Esimerkiksi jos äänestetään kaksi kertaa kolmen sekunnin välein, näkyy jälkimmäinen notifikaatio ruudulla ainoastaan kahden sekunnin verran (olettaen että notifikaation         näyttöaika on 5 sekuntia). Tämä johtuu siitä, että ensimmäisen äänestyksen notifikaation tyhjennys tyhjentääkin myöhemmän äänestyksen notifikaation.
 
-  Korjaa bugi, siten että usean peräkkäisen äänestyksen viimeistä notifikaatiota näytetään aina viiden sekunnin ajan. Korjaus tapahtuu siten, että uuden notifikaation tullessa edellisen notifikaation nollaus tarvittaessa perutaan, ks. funktion setTimeout dokumentaatio.
+    Korjaa bugi, siten että usean peräkkäisen äänestyksen viimeistä notifikaatiota näytetään aina viiden sekunnin ajan. Korjaus tapahtuu siten, että uuden notifikaation tullessa     edellisen notifikaation nollaus tarvittaessa perutaan, ks. funktion setTimeout dokumentaatio.
 
 \* = vapaaehtoinen tehtävä

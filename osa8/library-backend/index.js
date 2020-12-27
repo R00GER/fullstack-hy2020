@@ -126,6 +126,7 @@ const resolvers = {
 
   Mutation: {
     addBook: (root, args) => {
+      console.log(args);
       const book = { ...args, id: books.length + 1 };
       const author = { name: args.author, id: authors.length + 1 };
       books = books.concat(book);

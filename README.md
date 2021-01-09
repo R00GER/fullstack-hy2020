@@ -43,16 +43,16 @@ Kurssilla käsitellään myös sovellusten testaamista, konfigurointia ja suorit
 * [ ] **Osa 7 - React router, custom-hookit, tyylikirjastot ja webpack**
   * [x] React-router
   * [ ] Custom-hookit
-  * [ ] Lisää tyyleistä
-  * [ ] Webpack
-  * [ ] Luokkakomponentit, sekalaista
-  * [ ] Tehtäviä: blogilistan laajennus
+  * [x] Lisää tyyleistä
+  * [x] Webpack
+  * [x] Luokkakomponentit, sekalaista
+  * [x] Tehtäviä: blogilistan laajennus
 * [ ] **Osa 8 - GraphQL**
-  * [ ] GraphQL-palvelin
-  * [ ] React ja GraphQL
-  * [ ] Tietokanta ja käyttäjien hallinta
-  * [ ] Kirjautuminen ja välimuistin päivitys
-  * [ ] Fragmentit ja subskriptiot
+  * [x] GraphQL-palvelin
+  * [x] React ja GraphQL
+  * [x] Tietokanta ja käyttäjien hallinta
+  * [x] Kirjautuminen ja välimuistin päivitys
+  * [x] Fragmentit ja subskriptiot
 * [ ] **Osa 9 - Typescript**
   * [ ] Background and introduction
   * [ ] First steps with Typescript

@@ -1,11 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import BirthYear from './BirthYear';
 
-const Authors = ({ show, authors }) => {
-  // const options = {
-
-  // }
-
+const Authors = ({ show, authors, token }) => {
   if (!show) {
     return null;
   }
@@ -30,7 +26,7 @@ const Authors = ({ show, authors }) => {
         </tbody>
       </table>
 
-      <BirthYear authors={authors} />
+      {token && <BirthYear authors={authors} />}
     </div>
   );
 };
